@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px rgb(223, 217, 217) solid;
+    button{
+        background-color: white;
+        border: none;
+    }
+}
+
+.active {
+    border-radius: 0;
+    border-bottom: 3px rgb(118, 170, 219) solid !important;
+}

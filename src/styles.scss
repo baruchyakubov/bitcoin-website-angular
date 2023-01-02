@@ -1,1 +1,210 @@
 /* You can add global styles to this file, and also import other style files */
+// VARIABLES
+
+// Colors
+$clr1: #e01e5a;
+$clr2: #293241;
+$clr3: #5c3fc5;
+$clr4: #696969;
+$clr5: #e6e9ec;
+
+$navHeight: 65px;
+
+// Breakpoints
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 768px;
+$normal-breakpoint: 900px;
+$wide-breakpoint: 1080px;
+
+// MIXINS
+@mixin for-mobile-layout {
+    @media (max-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet-layout {
+    @media (max-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (max-width: $normal-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (max-width: $wide-breakpoint) {
+        @content;
+    }
+}
+
+// BASICS
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: OpenSans, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    font-weight: normal;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+h1{
+    font-size: rem(25px);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px rgb(117, 115, 115) solid;
+    border-radius: 10px;
+    background-color: rgba(221, 214, 214, 0.418);
+    color: rgb(48, 49, 49);
+    &:hover{
+        background-color: rgba(128, 126, 126, 0.418);
+    }
+    * {
+        pointer-events: none;
+    }
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+}
+
+// body {
+//     margin: 0;
+//     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+//         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+//         sans-serif;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+input {
+    font-family: inherit;
+    text-align: inherit;
+    border: 1px rgba(223, 217, 217, 1) solid;
+    box-shadow: 1px 2px 5px 0px rgba(237, 224, 224, 0.56);
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(237, 224, 224, 0.56);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(237, 224, 224, 0.56);
+}
+
+// MAC like scrollbar
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+    -webkit-border-radius: 100px;
+}
+
+
+
+// LAYOUT
+.container {
+    max-width: $normal-breakpoint;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 20px;
+
+
+    @include for-mobile-layout {
+        max-width: initial;
+    }
+
+    @include for-tablet-layout {
+        max-width: $mobile-breakpoint;
+    }
+
+    @include for-normal-layout {
+        max-width: $tablet-breakpoint;
+    }
+
+    @include for-wide-layout {
+        max-width: $normal-breakpoint;
+    }
+}
+
+// GRIDS
+.simple-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 30px;
+}
+
+// FUNCTIONS
+
+// REM Functions
+@function rem($size) {
+    $remSize: $size / 16px;
+    @return ($remSize) * 1rem;
+}
+
+// EM Functions
+@function em($pixels, $context: 16px) {
+    @return ($pixels/$context) * 1em;
+}
+

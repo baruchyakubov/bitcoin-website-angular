@@ -1,0 +1,23 @@
+.edit-page{
+    margin-top: 20px;
+    form{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 250px;
+        input{
+            padding: 7px;
+            border-radius: 10px;
+        }
+        .edit-btn{
+            button{
+                margin-top: 10px;
+                &:not(:last-child){
+                    margin-inline-end: 10px;
+                }
+            }
+      
+        }
+    }
+}

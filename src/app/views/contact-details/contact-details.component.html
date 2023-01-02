@@ -1,0 +1,16 @@
+<section *ngIf="contact" class='contact-details container'>
+    <div class="details">
+        <nav>
+            <img routerLink="/contact" src="../../../assets/img/back.png"  alt="" />
+            <img [routerLink]="['/edit', contact._id]" src="../../../assets/img/edit.png" alt="" />
+        </nav>
+        <section>
+            <img src="../../../assets/img/contact.png" alt="" />
+            <div>
+                <p>Name: {{ contact.name }}</p>
+                <p>Phone: {{ contact.phone }}</p>
+                <p>Email: {{ contact.email }}</p>
+            </div>
+        </section>
+    </div>
+</section>

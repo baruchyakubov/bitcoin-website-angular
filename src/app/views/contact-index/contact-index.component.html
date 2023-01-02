@@ -1,0 +1,8 @@
+<section class='contact-page container'>
+    <!-- <contact-details *ngIf="selectedContactId; else contactList" [contactId]="selectedContactId"></contact-details> -->
+
+    <!-- <ng-template #contactList> -->
+        <contact-filter></contact-filter>
+        <contact-list  [contacts]="contacts$ | async"></contact-list>
+    <!-- </ng-template> -->
+</section>
