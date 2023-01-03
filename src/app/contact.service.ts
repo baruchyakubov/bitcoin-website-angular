@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { Contact , ContactFilter } from './models/contact.model';
-
-
+import { StorageService } from './storage.service';
 
 const CONTACTS = [
     {
@@ -127,9 +126,11 @@ const CONTACTS = [
 })
 export class ContactService {
 
+    constructor(private storageService: StorageService) { }
+
     //mock the server
-    private contacts: string | null = localStorage['contacts']
-    private _contactsDb: Contact[] = this.contacts ?  JSON.parse(localStorage['contacts']) : null
+    // private contacts: string | null = localStorage['contacts']
+    private _contactsDb: Contact[] = this.storageService._loadFromStorage('contacts')
 
     private _contacts$ = new BehaviorSubject<Contact[]>([])
     public contacts$ = this._contacts$.asObservable()
@@ -137,14 +138,14 @@ export class ContactService {
     private _contactFilter$ = new BehaviorSubject<ContactFilter>({ term: '' });
     public contactFilter$ = this._contactFilter$.asObservable()
 
-    constructor() {
-    }
+   
 
 
     public loadContacts(): void {
+
         if(!this._contactsDb || !this._contactsDb.length){
             this._contactsDb = CONTACTS
-            localStorage['contacts'] = JSON.stringify(CONTACTS);
+            this.storageService._saveToStorage('contacts' , this._contactsDb)
         }
         let contacts = this._contactsDb;
         const filterBy = this._contactFilter$.value
@@ -166,7 +167,7 @@ export class ContactService {
     public deleteContact(id: string | undefined) {
         //mock the server work
         this._contactsDb = this._contactsDb.filter(contact => contact._id !== id)
-        localStorage['contacts'] = JSON.stringify(this._contactsDb);
+        this.storageService._saveToStorage('contacts' , this._contactsDb)
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
     }
@@ -183,7 +184,7 @@ export class ContactService {
     private _updateContact(contact: Contact) {
         //mock the server work  
         this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
-        localStorage['contacts'] = JSON.stringify(this._contactsDb);
+        this.storageService._saveToStorage('contacts' , this._contactsDb)
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._sort(this._contactsDb))
     }
@@ -193,7 +194,7 @@ export class ContactService {
         const newContact = new Contact(contact.name, contact.email, contact.phone);
         if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
         this._contactsDb.push(newContact)
-        localStorage['contacts'] = JSON.stringify(this._contactsDb);
+        this.storageService._saveToStorage('contacts' , this._contactsDb)
         this._contacts$.next(this._sort(this._contactsDb))
     }
 

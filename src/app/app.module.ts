@@ -14,6 +14,9 @@ import { HomeComponent } from './views/home/home.component';
 import { StatisticPageComponent } from './views/statistic-page/statistic-page.component';
 import { AwasomeChartComponent } from './awasome-chart/awasome-chart.component';
 import { EditContactComponent } from './views/edit-contact/edit-contact.component';
+import { SignupPageComponent } from './views/signup-page/signup-page.component';
+import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
+import { MoveListComponent } from './move-list/move-list.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { EditContactComponent } from './views/edit-contact/edit-contact.componen
     HomeComponent,
     StatisticPageComponent,
     AwasomeChartComponent,
-    EditContactComponent
+    EditContactComponent,
+    SignupPageComponent,
+    TransferFundComponent,
+    MoveListComponent
   ],
   imports: [
     BrowserModule,

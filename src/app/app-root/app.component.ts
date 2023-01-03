@@ -1,7 +1,8 @@
 import { Component , OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../models/contact.model';
-import { Observable , Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,16 @@ import { Observable , Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService , private router: Router) {
     
    }
 
    subscription!: Subscription
-  user!: User  
+  user!: User
   ngOnInit(): void {
-    this.subscription = this.userService.getUser().subscribe(user =>{
+    this.subscription = this.userService.user$.subscribe(user =>{
       this.user = user
+      if(!this.user) this.router.navigateByUrl('/')
     })
   }
 

@@ -1,0 +1,16 @@
+<h1 *ngIf="contact; else home" >Your moves:</h1>
+<ng-template #home>
+    <h1>Your last moves:</h1> 
+   </ng-template>
+<section *ngIf="moves.length; else noMoves" class='move-list container'>
+    <ul>
+            <li *ngFor="let move of moves; trackBy: trackByFn">
+                <p>To: {{move.to}}</p>
+                <p>At: {{move.at | date}}</p>
+                <p>Amount: {{move.amount}} coins</p>
+            </li>
+    </ul>
+</section>
+<ng-template #noMoves>
+   <p>No moves yet</p> 
+  </ng-template>

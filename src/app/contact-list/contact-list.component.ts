@@ -8,4 +8,8 @@ import { Contact } from '../models/contact.model';
 })
 export class ContactListComponent {
   @Input() contacts!:Contact[] | null
+
+  trackByFn(idx: number, item: Contact) {
+    return item._id
+}
 }

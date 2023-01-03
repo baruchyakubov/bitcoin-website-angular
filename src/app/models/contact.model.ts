@@ -20,7 +20,7 @@ export interface ContactFilter {
 export interface User {
     name: string
     coins: number
-    moves: Array<object>
+    moves: Array<Move>
 }
 
 export interface BitcoinData {
@@ -37,6 +37,13 @@ export interface FullDataSet {
     categories: Array<String>
     data: Array<Number>
     id: string
+}
+
+export interface Move{
+    toId: string | undefined
+    to: string
+    at: number,
+    amount: number
 }
 
 

@@ -1,0 +1,26 @@
+.transfer-fund{
+    background-color: rgb(108, 194, 216);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: large;
+        margin-bottom: 10px;
+    }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        input{
+            border-radius: 5px;
+        }
+        button{
+            padding: 5px;
+            border: 1px rgb(209, 202, 202) solid;
+            color: white;
+            background-color: rgb(131, 126, 126);
+        }
+    }
+}
