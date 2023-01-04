@@ -14,21 +14,21 @@ export class BitcoinService {
   }
 
   public async getMarketPrice() {
-    var Data = this.storageService._loadFromStorage('market-price')
+    var Data = this.storageService._loadFromStorage('market-price-2')
     if (!Data) {
       Data = await axios.get('https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true')
       Data = Data.data.values
-      this.storageService._saveToStorage('market-price' , Data)
+      this.storageService._saveToStorage('market-price-2' , Data)
     }
     return Data
   }
 
   public async getTradingVolume() {
-    var Data = this.storageService._loadFromStorage('trading-volume')
+    var Data = this.storageService._loadFromStorage('trading-volume-2')
     if (!Data) {
       Data = await axios.get('https://api.blockchain.info/charts/trade-volume?timespan=5months&format=json&cors=true')
       Data = Data.data.values
-      this.storageService._saveToStorage('trading-volume' , Data)
+      this.storageService._saveToStorage('trading-volume-2' , Data)
     }
     return Data
   }
