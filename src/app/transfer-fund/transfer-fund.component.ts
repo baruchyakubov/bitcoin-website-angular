@@ -1,6 +1,6 @@
 import { Component , Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Contact } from '../models/contact.model';
+import { Contact , User } from '../models/contact.model';
 import { UserService } from '../user.service';
 
 @Component({
@@ -10,6 +10,9 @@ import { UserService } from '../user.service';
 })
 export class TransferFundComponent {
 @Input() contact!:Contact
+@Input() user!:User
+
+
 
 constructor(private userService: UserService){ }
 

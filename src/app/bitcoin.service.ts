@@ -20,7 +20,6 @@ export class BitcoinService {
       Data = Data.data.values
       this.storageService._saveToStorage('market-price' , Data)
     }
-    console.log(Data);
     return Data
   }
 
@@ -31,7 +30,6 @@ export class BitcoinService {
       Data = Data.data.values
       this.storageService._saveToStorage('trading-volume' , Data)
     }
-    console.log(Data);
     return Data
   }
 }

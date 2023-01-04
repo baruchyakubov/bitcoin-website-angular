@@ -2,7 +2,7 @@
     <h1>Transfer coins to baruch</h1>
     <form (submit)="onTransferCoins(form)" #form="ngForm">
         <label htmlFor="coins">Amount:</label>
-        <input ngModel value="0" type="text" name="coins" id="coins" />
+        <input appForbiddenName="bob" ngModel value="0" type="text" name="coins" id="coins" />
         <button>Transfer</button>
     </form>
 </section>
