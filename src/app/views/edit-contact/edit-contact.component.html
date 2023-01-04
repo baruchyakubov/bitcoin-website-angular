@@ -2,16 +2,24 @@
     <h1>Edit Contact</h1>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <label htmlFor="name">Name:</label>
-        <input [(ngModel)] = "contact.name" ngModel type="text" name="name" id="name" />
-
+        <input required #name="ngModel" [(ngModel)] = "contact.name" ngModel type="text" name="name" id="name" />
+        <p class="errors" *ngIf="name.invalid && name.touched">
+            <span *ngIf="name.errors?.['required']" >Name is required</span>
+        </p>
         <label htmlFor="phone">Phone:</label>
-        <input [(ngModel)] = "contact.phone"  ngModel type="text" name="phone" id="phone" />
-
+        <input pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" #phone="ngModel" required [(ngModel)] = "contact.phone"  ngModel type="text" name="phone" id="phone" />
+        <p class="errors" *ngIf="phone.invalid && phone.touched">
+            <span *ngIf="phone.errors?.['required']" >Phone is required</span>
+            <span *ngIf="phone.errors?.['pattern']" >Wrong phone format</span>
+        </p>
         <label htmlFor="email">Email:</label>
-        <input [(ngModel)] = "contact.email" ngModel type="text" name="email" id="email" />
-
+        <input  #email="ngModel" required [(ngModel)] = "contact.email" ngModel type="text" name="email" pattern="(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"/>
+        <p class="errors" *ngIf="email.invalid && email.touched">
+            <span *ngIf="email.errors?.['required']" >Email is required</span>
+            <span *ngIf="email.errors?.['pattern']" >Wrong email format</span>
+        </p>
         <section class='edit-btn'>
-            <button>Save</button>
+            <button [disabled]="form.invalid" >Save</button>
             <button type="button" (click)="deleteContact()">Delete</button>
             <button type="button" routerLink="/contact" >Back</button>
         </section>

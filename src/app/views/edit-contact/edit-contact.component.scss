@@ -20,4 +20,15 @@
       
         }
     }
+    span{
+        color: rgb(176, 91, 91);
+    }
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid rgb(176, 91, 91);
+}
+
+input.ng-valid[required] {
+    border: 1px solid rgb(80, 186, 80);
 }
