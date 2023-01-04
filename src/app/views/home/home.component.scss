@@ -14,5 +14,10 @@
     }
     .logout{
         margin-top: 20px;
+        background-color: rgb(186, 96, 96);
+        transition: 0.4s;
+        &:hover{
+            background-color: rgb(209, 149, 149);
+        }
     }
 }

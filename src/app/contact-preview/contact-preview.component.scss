@@ -1,33 +1,29 @@
 .contact-preview {
-    background-color: #1ebae90b;
+    background-color: #cae8f1b5;
     box-shadow: 2px 2px 11px rgb(43 17 74 / 17%);
     border-radius: 3px;
     display: flex;
     overflow: hidden;
     cursor: pointer;
+    transition: 0.4s;
+    border-radius: 13px;
     .info {
         display: flex;
         align-items: center;
         gap: 10px;
         padding: 10px;
         flex-grow: 1;
-        img{
+
+        img {
             width: 40px;
             height: 40px;
         }
     }
 
-    .actions {
-        flex-basis: 25%;
-        padding: 10px;
-        background-color: #000000c9;
-        display: flex;
-        align-items: center;
-        transform: translateY(100%);
-        transition: transform 0.2s;
-    }
-
-    &:hover .actions {
-        transform: translateY(0);
+    &:hover {
+        box-shadow: 6px 8px 5px 0px rgba(203, 206, 219, 0.75);
+        -webkit-box-shadow: 6px 8px 5px 0px rgba(203, 206, 219, 0.75);
+        -moz-box-shadow: 6px 8px 5px 0px rgba(203, 206, 219, 0.75);
+        scale: 1.05;
     }
 }
