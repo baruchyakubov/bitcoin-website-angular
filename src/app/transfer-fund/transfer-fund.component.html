@@ -5,6 +5,7 @@
         <input pattern="^[1-9][0-9]*$" required #coins="ngModel" [appCoinsAmount]="user.coins" ngModel value="0" type="text" name="coins"
             id="coins" />
         <p class="errors" *ngIf="coins.invalid && (coins.dirty || coins.touched)">
+            <span *ngIf="coins.errors?.['required']">Input is required</span>
             <span *ngIf="coins.errors?.['CoinsAmount']">Not enough coins</span>
             <span *ngIf="coins.errors?.['pattern']" >Not valid Amount</span>
         </p>
