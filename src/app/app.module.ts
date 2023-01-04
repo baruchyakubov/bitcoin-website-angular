@@ -17,6 +17,7 @@ import { EditContactComponent } from './views/edit-contact/edit-contact.componen
 import { SignupPageComponent } from './views/signup-page/signup-page.component';
 import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
 import { MoveListComponent } from './move-list/move-list.component';
+import { CoinsAmountDirective } from './directives/coins-amount.directive';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MoveListComponent } from './move-list/move-list.component';
     EditContactComponent,
     SignupPageComponent,
     TransferFundComponent,
-    MoveListComponent
+    MoveListComponent,
+    CoinsAmountDirective
   ],
   imports: [
     BrowserModule,
