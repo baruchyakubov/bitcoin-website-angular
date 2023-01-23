@@ -1,4 +1,12 @@
 # MyApp
+## About
+a frontend application that was written with
+angular framework and TypeScript. The app has basic auth features , contact list
+with full crudle, forms with advanced validations , and statistic charts of bitcoin
+market.
+
+## Technologies
+Angular.js , TypeScript , and SCSS.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
