@@ -1,12 +1,30 @@
 # MyApp
 ## About
-a frontend application that was written with
-angular framework and TypeScript. The app has basic auth features , contact list
-with full crudle, forms with advanced validations , and statistic charts of bitcoin
-market.
+A frontend application that was written with angular framework and TypeScript.
+[Link to website](https://baruchyakubov.github.io/bitcoin-website-angular/#/)
+
+![image](https://user-images.githubusercontent.com/114091759/224545753-7353bc95-73b6-4807-9e6e-48b15af68d28.png)
+![image](https://user-images.githubusercontent.com/114091759/224545793-6455e972-9b0d-4070-921c-642a6eaa0b2c.png)
+![image](https://user-images.githubusercontent.com/114091759/224545823-407c9c75-032a-41e9-956e-9ea2ca08fda1.png)
+![image](https://user-images.githubusercontent.com/114091759/224545839-cf0d7581-185d-4008-9138-ac2f55f28e09.png)
+![image](https://user-images.githubusercontent.com/114091759/224545747-05c24030-88f2-4b28-912a-fa49679bdd74.png)
+
+## Features
+1. The app has basic auth features.
+2. Contact page list with full crudle(add , edit , delete and filter)
+3. Edit form with advanced validation with NgForm.
+4. Statistic page with cahrts of bitcoin market.
+5. The ability to transfer coins to other contacts.
+
+## Motivation
+To improve myself in angular frameworm , type
 
 ## Technologies
-Angular.js , TypeScript , and SCSS.
+1. Angular.js.
+2. RxJS.
+3. TypeScript.
+4. SCSS.
+5. NgForm.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
