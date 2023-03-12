@@ -1,6 +1,7 @@
 # MyApp
 ## About
 A frontend application that was written with angular framework and TypeScript.
+
 [Link to website](https://baruchyakubov.github.io/bitcoin-website-angular/#/)
 
 ![image](https://user-images.githubusercontent.com/114091759/224545753-7353bc95-73b6-4807-9e6e-48b15af68d28.png)
@@ -17,7 +18,7 @@ A frontend application that was written with angular framework and TypeScript.
 5. The ability to transfer coins to other contacts.
 
 ## Motivation
-To improve myself in angular frameworm , type
+To improve myself in angular frameworm , typeScript , and RxJS.
 
 ## Technologies
 1. Angular.js.
@@ -25,6 +26,7 @@ To improve myself in angular frameworm , type
 3. TypeScript.
 4. SCSS.
 5. NgForm.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
